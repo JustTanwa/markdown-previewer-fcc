@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+body {
+  background-color: #9BA0BC;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lobster;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+#editor {
+  min-height: 100vh;
+}
+#preview {
+  background-color: lightblue;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+code, pre {
+  background-color: white;
+  font-weight: bold;
+}
+blockquote {
+  color: gray;
+  border-left: 2px gray solid;
+  padding-left: 10px;
+}
+p img {
+  display: block;
+  width: 50%;
+  height: auto;  
+}
