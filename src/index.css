@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --titleHeight: 100px;
 }
-
-
 
 body {
   background-color: #9BA0BC;
+  box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Lobster;
@@ -30,12 +28,20 @@ h1, h2, h3, h4, h5, h6 {
   flex-basis: 100%;
   flex: 1;
 }
-#editor {
-  min-height: 100vh;
+#title {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
+#editor, #preview {
+  height: calc(100% - var(--titleHeight));
+  margin: 10px 20px;
+  padding: 0.5em 1em;
+  border-top: 20px solid black;
+}
+
 #preview {
   background-color: lightblue;
-  max-height: 100vh;
   overflow-y: auto;
 }
 

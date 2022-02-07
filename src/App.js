@@ -1,17 +1,19 @@
 import React from 'react'
 import './App.css';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editor: `# This is header 
-## this is subheader
-[this will be a link](https://www.freecodecamp.org)
+window.marked.setOptions({
+  breaks: true,
+});
 
-Here are some code \`<h1>Super Head1</h1>\`
+const template = `# An example of a markdown and a previewer
+      
+## Some examples of things such as list, link, images and more...
 
-**Code** block:
+[See My Tic-Tac-Toe Game](https://focused-wozniak-fe8d98.netlify.app/)
+
+Can simply write inline code like so \`<h1>Super Head1</h1>\`
+
+Or you can write a code **block** easily like so: 
 \`\`\`
 // some comments
 function addNum(arr) {
@@ -21,14 +23,21 @@ function addNum(arr) {
 
 > This is supposed to be block quotes
 
-Here are the list of anime you may enjoy:
+You can even write lists, for example a list of popular anime:
 - Attack on Titan
 - Naruto
-- Horimiya
+- One piece
 
-Here is an image
+Naruto approves of this markup!
+
 ![Naruto image](https://i.pinimg.com/originals/e3/cc/0e/e3cc0ed88778d02c88d3676312ab020f.jpg)
 `
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editor: template,
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -44,6 +53,9 @@ Here is an image
 
     return (
       <div className="container">
+        <div className="row">
+          <h1 id="title" className="text-center"> Markdown Previwer </h1>
+        </div>
         <div className="row">
           <div className="column">
             <textarea onChange={this.handleChange} id="editor">
